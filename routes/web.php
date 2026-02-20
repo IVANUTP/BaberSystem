@@ -19,12 +19,13 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
     // usuarios
-    Route::get('/users', [userController::class, 'index'])->name('users.index');
+
+
+});
+ Route::get('/users', [userController::class, 'index'])->name('users.index');
     Route::post('/users/store', [userController::class, 'store'])->name('users.store');
     Route::delete('/users/destroy/{id}', [userController::class, 'destroy'])->name('users.destroy');
     Route::put('/users/update/{id}', [userController::class, 'update'])->name('users.update');
-
-});
 
 //Barber
 Route::middleware(['auth', 'role:admin,barber','nocache'])->group(function () {
