@@ -76,7 +76,7 @@
 
                                 <td>
                                     @if ($service->img)
-                                        <img src="{{ asset('storage/' . $service->img) }}" width="200px" class="service-img">
+                                        <img src="{{ asset('storage/' . $service->img) }}" width="200" class="service-img">
                                     @else
                                         <span class="text-muted small">No disponible</span>
                                     @endif
