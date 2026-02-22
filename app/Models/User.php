@@ -52,7 +52,7 @@ class User extends Authenticatable
         return $this->role==='admin';
     }
      public function isBarber(){
-        return $this->role==='barber';
+        return $this->role==='barbero';
     }
      public function isCliente(){
         return $this->role==='cliente';

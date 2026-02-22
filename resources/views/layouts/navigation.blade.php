@@ -50,33 +50,48 @@
     <!-- SIDEBAR -->
     <div class="bg-dark text-white d-flex flex-column" id="sidebar-wrapper">
 
-        <div class="text-center py-4 border-bottom">
-            <strong>💈 Barber System</strong>
-        </div>
+        @if (auth()->user()->role === 'admin')
+            <div class="text-center py-4 border-bottom">
+                <a href="{{ route('dashboard') }}"><img src="assets/img/logo/logo.png" alt=""></a>
+            </div>
+        @endif
+        @if (auth()->user()->role === 'barbero')
+            <div class="text-center py-4 border-bottom">
+                <a href="{{ route('services.index') }}"><img src="assets/img/logo/logo.png" alt=""></a>
+            </div>
+        @endif
+
 
         <div class="list-group list-group-flush flex-grow-1">
 
-            <a href="{{ route('dashboard') }}"
-                class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('dashboard') ? 'active-link' : '' }}">
-                <i class="bi bi-speedometer2 me-2"></i> Dashboard
-            </a>
-
-            <a href="{{ route('services.index') }}"
-                class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('services.index') ? 'active-link' : '' }}">
-                <i class="bi bi-scissors me-2"></i> Servicios
-            </a>
-
-            <a href="{{ route('users.index') }}"
-                class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('users.index') ? 'active-link' : '' }}">
-                <i class="bi bi-people me-2"></i> Usuarios
-            </a>
-
-            <a href="{{ route('appointments.index') }}"
-                class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('appointments.index') ? 'active-link' : '' }}">
-                <i class="bi bi-calendar-check me-2"></i> Citas
-            </a>
-
-
+            @if (auth()->user()->role === 'admin')
+                <a href="{{ route('dashboard') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('dashboard') ? 'active-link' : '' }}">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="{{ route('services.index') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('services.index') ? 'active-link' : '' }}">
+                    <i class="bi bi-scissors me-2"></i> Servicios
+                </a>
+                <a href="{{ route('appointments.index') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('appointments.index') ? 'active-link' : '' }}">
+                    <i class="bi bi-calendar-check me-2"></i> Citas
+                </a>
+                 <a href="{{ route('users.index') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('users.index') ? 'active-link' : '' }}">
+                    <i class="bi bi-people me-2"></i> Usuarios
+                </a>
+            @endif
+            @if (auth()->user()->role === 'barbero')
+                <a href="{{ route('services.index') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('services.index') ? 'active-link' : '' }}">
+                    <i class="bi bi-scissors me-2"></i> Servicios
+                </a>
+                <a href="{{ route('appointments.index') }}"
+                    class="list-group-item list-group-item-action bg-dark text-white {{ request()->routeIs('appointments.index') ? 'active-link' : '' }}">
+                    <i class="bi bi-calendar-check me-2"></i> Citas
+                </a>
+            @endif
 
         </div>
 

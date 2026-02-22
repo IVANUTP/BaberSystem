@@ -27,7 +27,7 @@ Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
 });
 
 //Barber
-Route::middleware(['auth', 'role:admin,barber','nocache'])->group(function () {
+Route::middleware(['auth', 'role:admin,barbero','nocache'])->group(function () {
     //profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
