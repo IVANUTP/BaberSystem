@@ -49,7 +49,6 @@ Route::middleware(['auth', 'role:cliente','nocache'])->group(function () {
     Route::post('/appointments/store', [appointemtsController::class, 'store'])->name('appointments.store');
 });
 
-
 //catalogo
 Route::get('/servicios', [sheetController::class, 'index'])->name('sheet.index');
 Route::get('/catalogo', [catalogoController::class, 'index'])->name('catalogo.index');

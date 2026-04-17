@@ -104,12 +104,10 @@
                         </div>
                         <div class="mb-4">
 
-                          <input type="hidden" name="employee_id" value="{{ $barberos->first()->id }}">
+                          <input type="hidden" name="employee_id">
                           <div class="alert alert-info small">
-                                Barbero asignado automáticamente: <strong>{{ $barberos->first()->name }}</strong>
+                               El Barbero se asignara automáticamente
                             </div>
-
-
                         </div>
 
                         <!-- Hora -->

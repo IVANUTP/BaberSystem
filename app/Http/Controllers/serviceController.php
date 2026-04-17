@@ -32,6 +32,7 @@ class serviceController extends Controller
             if($request->hasFile('img')){
                 $path=$request->file('img')->store('services_images','public');
             }
+            //dd($path);
 
             servicesModel::create([
                 'name' => $request->name,
