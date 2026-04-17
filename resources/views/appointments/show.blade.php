@@ -39,6 +39,7 @@
                          <tr>
                              <th>Cliente</th>
                              <th>Barbero</th>
+                             <th>Servicio</th>
                              <th>Fecha</th>
                              <th>Hora</th>
                              <th>Estado</th>
@@ -52,6 +53,7 @@
                                  <tr>
                                      <td class="fw-semibold">{{ $appointment->user->name }}</td>
                                      <td class="text-muted">{{ $appointment->barber->name }}</td>
+                                     <td class="text-muted">{{ $appointment->service->name }}</td>
                                      <td>{{ $appointment->date->format('d/m/Y') }}</td>
                                      <td> {{ \Carbon\Carbon::parse($appointment->time)->format('h:i A') }}</td>
                                      @if ($appointment->status === 'pendiente')
