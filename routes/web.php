@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\appointemtsController;
+use App\Http\Controllers\BlogAdministrativoController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\catalogoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\serviceController;
@@ -15,14 +17,17 @@ Route::get('/', function () {
 //Admin
 Route::middleware(['auth', 'role:admin', 'nocache'])->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
     // usuarios
     Route::get('/users', [userController::class, 'index'])->name('users.index');
     Route::post('/users/store', [userController::class, 'store'])->name('users.store');
     Route::delete('/users/destroy/{id}', [userController::class, 'destroy'])->name('users.destroy');
     Route::put('/users/update/{id}', [userController::class, 'update'])->name('users.update');
+
+    //blog Administrativo
+
+    Route::get('/blogAdmin',[BlogAdministrativoController::class,'index'])->name('blogAdmin.index');
+    Route::post('/blogAdmin/store',[BlogAdministrativoController::class,'store'])->name('blogAdmin.store');
+    Route::delete('/blogAdmin/destroy/{id}',[BlogAdministrativoController::class,'destroy'])->name('blogAdmin.destroy');
 
 });
 
@@ -53,6 +58,8 @@ Route::middleware(['auth', 'role:cliente','nocache'])->group(function () {
 Route::get('/servicios', [sheetController::class, 'index'])->name('sheet.index');
 Route::get('/catalogo', [catalogoController::class, 'index'])->name('catalogo.index');
 
+//blog
+Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
 
 
 require __DIR__ . '/auth.php';
