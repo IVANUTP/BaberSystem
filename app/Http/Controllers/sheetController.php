@@ -12,7 +12,7 @@ class sheetController extends Controller
     {
         $services=servicesModel::all();
         $barberos=User::where('role','barbero')->get();
-        return view('catalogo.service', compact('services','barberos'));
+        return view('serviceClient.service', compact('services','barberos'));
     }
 
 

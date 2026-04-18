@@ -16,16 +16,8 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li class="active"><a href="{{ route('catalogo.index') }}">Inicio</a></li>
-                                        <li><a href="about.html">About</a></li>
                                         <li><a href="{{ route('sheet.index') }}">Servicios</a></li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog_details.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -74,7 +66,6 @@
                                                 @endforelse
                                             </ul>
                                         </div>
-
 
                                         <div class="dropdown">
                                             <button class="btn header-btn dropdown-toggle" data-bs-toggle="dropdown">

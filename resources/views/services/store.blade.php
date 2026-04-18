@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label fw-semibold">Precio</label>
+                                <label class="form-label fw-semibold">Precio</alabel>
                                 <input name="price" type="number" step="0.01" class="form-control"
                                     placeholder="$">
                                 @error('price')
